@@ -41,4 +41,4 @@ Outputs will be written to `examples/`:
 ## Notes
 
 - The condition language is a minimal pseudo-expression and is translated per backend. Future versions will add a proper expression grammar.
-- `logsource` is used as the Athena table name and as context for other backends. Map it to your environment as needed. 
+- `logsource` is used as the Athena table name and as context for other backends. Map it to your environment as needed. # test
