@@ -1,4 +1,5 @@
 # Detection-as-Code for AWS
+[![CI](https://github.com/TilakUpadhyay/detection-as-code-aws/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ABCD/detection-as-code-aws/actions/workflows/ci.yml)
 
 A modular framework that lets analysts author portable detections in YAML/JSON and compile them to multiple AWS backends:
 
