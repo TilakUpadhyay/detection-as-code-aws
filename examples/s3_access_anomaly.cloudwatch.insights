@@ -1,0 +1,7 @@
+# S3 Suspicious Access
+# Detects unusual S3 GetObject activity from uncommon IPs.
+# logsource: s3_access_logs
+fields @timestamp, @message
+| filter eventName == "GetObject" and not ipAddress in known_ips
+| sort @timestamp desc
+| limit 100 

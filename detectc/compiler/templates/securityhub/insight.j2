@@ -1,0 +1,8 @@
+{
+  "Name": "{{ rule.title }}",
+  "Filters": {
+    "ProductName": [ { "Value": "{{ rule.logsource }}", "Comparison": "EQUALS" } ],
+    "NoteText": [ { "Value": {{ condition | tojson }}, "Comparison": "CONTAINS" } ]
+  },
+  "GroupByAttribute": "ResourceType"
+} 

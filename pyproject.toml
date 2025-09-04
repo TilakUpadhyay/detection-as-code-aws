@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "detection-as-code-aws"
+version = "0.1.0"
+authors = [{ name = "Detection-as-Code AWS Contributors" }]
+description = "Detection-as-Code framework for AWS: compile YAML/JSON rules to CloudWatch Logs Insights, Athena SQL, and Security Hub."
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["aws", "security", "detection", "cloudwatch", "athena", "securityhub", "soc", "automation"]
+license = { text = "MIT" }
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+dependencies = [
+  "PyYAML>=6.0.1",
+  "Jinja2>=3.1.4",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2.0",
+  "boto3>=1.34.0",
+  "mypy>=1.11.0",
+  "types-PyYAML>=6.0.12",
+]
+
+[project.scripts]
+detectc = "detectc.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["detectc*"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+detectc = [
+  "compiler/templates/**/*.j2"
+] 

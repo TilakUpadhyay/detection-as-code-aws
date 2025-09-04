@@ -1,0 +1,7 @@
+# {{ rule.title }}
+# {{ rule.description }}
+# logsource: {{ rule.logsource }}
+fields @timestamp, @message
+| filter {{ condition }}
+| sort @timestamp desc
+| limit 100 

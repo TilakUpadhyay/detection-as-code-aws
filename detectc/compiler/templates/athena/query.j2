@@ -1,0 +1,8 @@
+-- {{ rule.title }}
+-- {{ rule.description }}
+-- logsource: {{ rule.logsource }}
+SELECT *
+FROM {{ rule.logsource }}
+WHERE {{ condition }}
+ORDER BY eventTime DESC
+LIMIT 100; 

@@ -1,0 +1,10 @@
+title: S3 Suspicious Access
+id: s3_access_anomaly
+description: Detects unusual S3 GetObject activity from uncommon IPs.
+logsource: s3_access_logs
+detection:
+  condition: eventName == "GetObject" and not ipAddress in known_ips
+output:
+  cloudwatch: true
+  athena: true
+  securityhub: true 

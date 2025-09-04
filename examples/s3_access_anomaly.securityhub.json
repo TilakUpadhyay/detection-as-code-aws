@@ -1,0 +1,18 @@
+{
+  "Name": "S3 Suspicious Access",
+  "Filters": {
+    "ProductName": [
+      {
+        "Value": "s3_access_logs",
+        "Comparison": "EQUALS"
+      }
+    ],
+    "NoteText": [
+      {
+        "Value": "eventName == \"GetObject\" and not ipAddress in known_ips",
+        "Comparison": "CONTAINS"
+      }
+    ]
+  },
+  "GroupByAttribute": "ResourceType"
+}
